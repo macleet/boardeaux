@@ -17,25 +17,41 @@ const app = express();
 
 /**** Express Pipeline Start ****/
 
+// get JSON from request body -> JSON.parse() -> req.body
+// i.e. JSON to JS object 
+app.use(bodyParser.json());
+
 // serving static files 
 // i.e. make 'public' directory available
 app.use(express.static('public'));
 
-// get JSON from request body -> JSON.parse() -> req.body
-// i.e. JSON to JS object 
-app.use(bodyParser.json());
+// FOR DEBUGGING
+// app.use((req, res, next) => {
+//     console.log(req.method, ": ", req.url);
+//     next();
+// });
 
 // if file unspecified, go to main page (index.html)
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-// FOR DEBUGGING
-app.use((req, res) => {
-    console.log(req.method, ": ", req.url);
+app.post('/studentData', (req, res) => {
+    let fname = req.body.firstname;
+    let lname = req.body.lastname;
+    let email = req.body.email;
+    let level = req.body.level;
+
+    console.log("###",fname, lname, email, level);
+
+    res.send( { answer: '42' } );
 });
 
-// INCLUDE ADDITIONAL REQUEST HANDLERS BELOW
+app.use(function(req, res) {
+    res.status(404);
+    res.type('txt');
+    res.send('404 - File ' + req.url + ' not found');
+});
 
 /**** Express Pipeline End ****/
 
