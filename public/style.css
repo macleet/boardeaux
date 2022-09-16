@@ -8,7 +8,6 @@
 h1 {
     font-weight: 600;
     font-size: 70px;
-    /* width: 50vw; */
     font-style: italic;
     color: #3484F0;
 
@@ -37,7 +36,6 @@ header {
     background-color: white;
     height: 550px;
     margin: 44px;
-    /* padding: 0px 35px 0px 35px; */
     border-radius: 16px;
     box-shadow: 5px 5px 18px #9fa9b4;
 
@@ -74,7 +72,7 @@ input[type="text"] {
     border-radius: 9px;
     box-sizing: border-box;
     height: 30px;
-    width: 300px;
+    width: 217px;
     padding-left: 10px;
     font-size: 16px;
     font-family: 'Nunito', sans-serif;
@@ -86,6 +84,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
     border: 2px solid rgb(100,100,100);
+    width: 300px;
 }
 
 #search-bar {
@@ -115,7 +114,6 @@ table {
     height: 380px;
     width: 100%;
     align-self: center;
-    /* display: flex; */
     color: rgb(70,70,70);
 }
 
@@ -136,22 +134,63 @@ tr:nth-child(odd):hover {
 }
 
 th {
-    /* padding: 0px 35px 0px 35px; */
     padding-left: 35px;
     font-size: 17px;
+}
+
+input.name-input {
+    width: 170px;
+    margin-left: 3px;
+}
+
+input.name-input:focus {
+    width: 170px;
+}
+
+input#email-input {
+    width: 262px;
+    margin-left: 3px;
+}
+
+input#level-input {
+    width: 224px;
+    margin-left: 3px;
+}
+
+input[type="email"] {
+    border-radius: 9px;
+    box-sizing: border-box;
+    height: 30px;
+    width: 300px;
+    padding-left: 10px;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    color: rgb(60,60,60);
+    border: 2px solid rgb(160,160,160);
+    transition: all 0.33s ease-in-out;
+    outline: none;
+}
+
+input[type="email"]:focus {
+    border: 2px solid rgb(100,100,100);
+}
+
+#action-field,
+.actions {
+    padding: 0px;
+    padding-right: 35px;
+}
+
+#action-field {
+    text-align: center;
 }
 
 td,
 th {
     text-align: left;
-    /* border: 1px solid black; */
     vertical-align: middle;
     height: 10px;
     padding-left: 35px;
-
-    /* padding-top: 5px; */
-    /* height: 10px; */
-    /* text-justify:distribute; */
 }
 
 #pages-wrapper {
@@ -171,21 +210,13 @@ th {
     width: 20px;
 }
 
-#first-button {
-    background-color: purple;
-    margin-right: 5px;
-}
-
+#first-button,
 #left-button {
     background-color: green;
     margin-right: 5px;
 }
 
-#right-button {
-    background-color: pink;
-    margin-left: 5px;
-}
-
+#right-button,
 #last-button {
     background-color: orange;
     margin-left: 5px;
