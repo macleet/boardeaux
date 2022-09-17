@@ -100,6 +100,7 @@ input[type="text"]:focus {
     transition: all 0.2s ease-in-out;
 }
 
+.edit-button:hover,
 #search-button:hover {
     filter: invert(16%) sepia(11%) saturate(2%) hue-rotate(329deg) brightness(96%) contrast(88%);
 }
@@ -190,7 +191,13 @@ th {
     text-align: left;
     vertical-align: middle;
     height: 10px;
-    padding-left: 35px;
+    /* max-height: 10px; */
+    padding: 0px 0px 0px 35px;
+}
+
+.edit-button {
+    filter: invert(75%) sepia(2%) saturate(10%) hue-rotate(320deg) brightness(83%) contrast(81%);
+    transition: all 0.2s ease-in-out;
 }
 
 #pages-wrapper {
