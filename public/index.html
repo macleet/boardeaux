@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css" />
         <link rel="icon" type="image/x-icon" href="favicon.ico" /> 
-        <script defer type="text/javascript" src="tableSubmission.js"></script>
+        <script defer type="text/javascript" src="tableOps.js"></script>
         <script defer type="text/javascript" src="ajax.js" ></script>
         <title>BOARDeaux</title>
     </head>
@@ -22,7 +22,7 @@
                     <div >
                         <form id="search-bar">
                             <input required type="text" pattern="(([a-z0-9._%+-]+@ucdavis.edu)|([A-za-z\s-])+)" placeholder="Search name or UCD email" >
-                            <img src="search-button.svg" id="search-button" class="filter-gray" />
+                            <img type="button" src="search-button.svg" id="search-button" class="filter-gray" />
                         </form>
                     </div>
                     <div id="filter-button">
@@ -38,63 +38,65 @@
                     <form id="form">
                         <th class="form-row">
                             <label for="name">Name</label>
-                            <input required type="text" placeholder="First name" class="name-input" id="first-name-input">
-                            <input required type="text" placeholder="Last name" class="name-input" id="last-name-input">
+                            <input required type="text" placeholder="First name" class="name-input" id="first-name-input" autocomplete="off" pattern="[A-Za-z]+">
+                            <input required type="text" placeholder="Last name" class="name-input" id="last-name-input" autocomplete="off" pattern="[A-Za-z]+">
                         </th>
                         <th class="form-row">
                             <label for="email">Email</label>
-                            <input required type="email" placeholder="UC Davis email" pattern="[a-z0-9._%+-]+@ucdavis.edu" id="email-input">
+                            <input required type="email" placeholder="UC Davis email" pattern="[a-z0-9._%+-]+@ucdavis.edu" autocomplete="off" id="email-input">
                         </th>
                         <th class="form-row">
                             <label for="level">Level</label>
-                            <input required type="text" placeholder="e.g. first-year, second-year..." id="level-input">
+                            <input required type="text" placeholder="e.g. first-year, second-year..." id="level-input" autocomplete="off" pattern="\b(first-year|second-year|third-year|fourth-year)\b">
                         </th>
                         <input type="submit" id="student-submit" hidden></input>
                     </form>
                     <th id="action-field" class="actions">Actions</th>
                 </tr>
+                <!-- BELOW NEEDS RESTUCTURING TO ACCOMODATE FOR FORM TAG (ie REPLACECHILD DIV WITH FORM) -->
                 <tr class="student-data" id="first-row">
                     <td class="name"></td>
                     <td class="email"></td>
                     <td class="level"></td>
-                    <td class="actions"></td>
+                    <td class="actions" contenteditable="false"><img type="button" src="edit-button.svg" class="edit-button" class="filter-gray" /></td>
                 </tr>
                 <tr class="student-data" id="second-row">
                     <td class="name"></td>
                     <td class="email"></td>
                     <td class="level"></td>
-                    <td class="actions"></td>
+                    <td class="actions" contenteditable="false"><img type="button" src="edit-button.svg" class="edit-button" class="filter-gray" /></td>
                 </tr>
                 <tr class="student-data" id="third-row">
                     <td class="name"></td>
                     <td class="email"></td>
                     <td class="level"></td>
-                    <td class="actions"></td>
+                    <td class="actions" contenteditable="false"><img type="button" src="edit-button.svg" class="edit-button" class="filter-gray" /></td>
                 </tr>
                 <tr class="student-data" id="fourth-row">
                     <td class="name"></td>
                     <td class="email"></td>
                     <td class="level"></td>
-                    <td class="actions"></td>
+                    <td class="actions" contenteditable="false"><img type="button" src="edit-button.svg" class="edit-button" class="filter-gray" /></td>
                 </tr>
                 <tr class="student-data" id="fifth-row">
                     <td class="name"></td>
                     <td class="email"></td>
                     <td class="level"></td>
-                    <td class="actions"></td>
+                    <td class="actions" contenteditable="false"><img type="button" src="edit-button.svg" class="edit-button" class="filter-gray" /></td>
                 </tr>
                 <tr class="student-data" id="sixth-row">
                     <td class="name"></td>
                     <td class="email"></td>
                     <td class="level"></td>
-                    <td class="actions"></td>
+                    <td class="actions" contenteditable="false"><img type="button" src="edit-button.svg" class="edit-button" class="filter-gray" /></td>
                 </tr>
                 <tr class="student-data" id="seventh-row">
                     <td class="name"></td>
                     <td class="email"></td>
                     <td class="level"></td>
-                    <td class="actions"></td>
+                    <td class="actions" contenteditable="false"><img type="button" src="edit-button.svg" class="edit-button" class="filter-gray" /></td>
                 </tr>
+                <!-- ABOVE NEEDS RESTUCTURING TO ACCOMODATE FOR FORM TAG (ie REPLACECHILD DIV WITH FORM) -->
             </table>
             <div id="pages-wrapper">
                 <div class="button" id="first-button">
