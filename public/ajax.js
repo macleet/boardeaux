@@ -1,4 +1,23 @@
+/* ajax.js includes operations for communicating with server
+ ***********************************************************
+ * In-place:
+ *      GET request sender
+ *      POST request sender
+ * To-do:
+ *      
+ */
+
 'use strict'
+
+async function sendGetRequest(url) {
+    let params = {
+        method: 'GET' 
+    };
+  
+    let response = await fetch(url, params);
+    if (response.ok) { return await response.json(); } 
+    else { throw Error(response.status); }
+}
 
 async function sendPostRequest(url, data) {
     let params = {
